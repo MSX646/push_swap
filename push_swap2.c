@@ -32,10 +32,10 @@ void	merge_halfs(t_stack **stack_a, t_stack **stack_b, t_stack *interval)
 	get_limit(&interval, *stack_b, 0);
 	while (ft_stack_has_bigger(*stack_b, interval->next->data))
 	{
-		if ((*stack_b)->data == ft_stack_min_value(*stack_b))
+		if ((*stack_b)->data == ft_stack_min(*stack_b))
 		{
 			push(stack_b, stack_a, "pa\n");
-			if ((*stack_b)->data != ft_stack_min_value(*stack_b)
+			if ((*stack_b)->data != ft_stack_min(*stack_b)
 				&& (*stack_b)->data <= interval->next->data)
 				rotate(stack_a, stack_b, "rr\n");
 			else
@@ -61,12 +61,12 @@ void	merge_sort_a(t_stack **stack_a, t_stack **stack_b, t_stack *interval)
 			push(stack_b, stack_a, "pa\n");
 			dupl = dupl->next;
 			if (ft_stack_size(*stack_b) && (*stack_b)->data != dupl->data
-				&& (*stack_b)->data != ft_stack_max_value(*stack_b))
+				&& (*stack_b)->data != ft_stack_max(*stack_b))
 				rotate(stack_a, stack_b, "rr\n");
 			else
 				rotate(stack_a, 0, "ra\n");
 		}
-		else if ((*stack_b)->data == ft_stack_max_value(*stack_b))
+		else if ((*stack_b)->data == ft_stack_max(*stack_b))
 			push(stack_b, stack_a, "pa\n");
 		else
 			rotate(stack_b, 0, "rb\n");
@@ -84,9 +84,9 @@ void	rotate_until_sorted(t_stack **stack_a, t_stack *interval)
 	int		index;
 
 	dupl = ft_stack_duplicate(*stack_a);
-	ft_stack_add_begin(&dupl, ft_stack_new_node(interval->data));
+	ft_stackadd_front(&dupl, ft_stack_new_node(interval->data));
 	stack_sort(&dupl);
-	num = ft_stack_get(dupl, ft_stack_find(dupl, interval->data) - 1);
+	num = ft_stack_getval(dupl, ft_stack_find(dupl, interval->data) - 1);
 	ft_stack_clear(&dupl);
 	index = ft_stack_find(*stack_a, num);
 	if (num == MIN_INT || index == MIN_INT)

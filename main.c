@@ -29,7 +29,7 @@ void	set_stack(char **argv, t_stack **stack_a)
 		new_node = ft_stack_new_node(data);
 		if (!new_node)
 			clean_exit(*stack_a, 0, 0);
-		ft_stack_add_to_end(stack_a, new_node);
+		ft_stackadd_back(stack_a, new_node);
 		i++;
 	}
 	if (ft_stack_duplicate_int(*stack_a))

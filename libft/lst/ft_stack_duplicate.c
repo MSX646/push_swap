@@ -26,7 +26,7 @@ t_stack	*ft_stack_duplicate(t_stack *stack)
 			ft_stack_clear(&dup);
 			return (0);
 		}
-		ft_stack_add_to_end(&dup, new_node);
+		ft_stackadd_back(&dup, new_node);
 		stack = stack->next;
 	}
 	return (dup);

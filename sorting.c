@@ -18,8 +18,8 @@ void	sorting(t_stack **stack_a, t_stack **stack_b)
 	int		max;
 	int		min;
 
-	max = ft_stack_max_value(*stack_a);
-	min = ft_stack_min_value(*stack_a);
+	max = ft_stack_max(*stack_a);
+	min = ft_stack_min(*stack_a);
 	if (ft_stack_size(*stack_a) <= 3)
 		sort3(stack_a);
 	else if (ft_stack_size(*stack_a) <= 5)
@@ -27,7 +27,7 @@ void	sorting(t_stack **stack_a, t_stack **stack_b)
 	else
 	{
 		interval = ft_stack_new_node(min);
-		ft_stack_add_to_end(&interval, ft_stack_new_node(max));
+		ft_stackadd_back(&interval, ft_stack_new_node(max));
 		sort_big(stack_a, stack_b, &interval, 0);
 	}
 }
@@ -37,8 +37,8 @@ void	sort3(t_stack **stack_a)
 	int	max;
 	int	min;
 
-	max = ft_stack_max_value(*stack_a);
-	min = ft_stack_min_value(*stack_a);
+	max = ft_stack_max(*stack_a);
+	min = ft_stack_min(*stack_a);
 	while (!ft_stack_is_sorted(*stack_a))
 	{
 		if ((*stack_a)->data != min

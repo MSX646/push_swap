@@ -16,9 +16,9 @@ STACK		=	lst/ft_stack_new_node.c lst/ft_stackadd_front.c \
 				lst/ft_stack_last.c lst/ft_stack_return_first.c \
 				lst/ft_stack_remove.c lst/ft_stack_has_bigger.c \
 				lst/ft_stack_clear.c lst/ft_stack_issorted.c \
-				lst/ft_stack_max_value.c lst/ft_stack_min_value.c \
+				lst/ft_stack_max.c lst/ft_stack_min.c \
 				lst/ft_stack_duplicate_int.c lst/ft_stack_sort.c \
-				lst/ft_stack_duplicate.c lst/ft_stack_get.c \
+				lst/ft_stack_duplicate.c lst/ft_stack_getval.c \
 				lst/ft_stack_find.c
 STACK_O		=	$(STACK:.c=.o)
 

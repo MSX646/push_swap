@@ -12,7 +12,7 @@
 
 #include "../libft.h"
 
-void	ft_stack_add_begin(t_stack **stack, t_stack *new)
+void	ft_stackadd_front(t_stack **stack, t_stack *new)
 {
 	t_stack	*temp;
 

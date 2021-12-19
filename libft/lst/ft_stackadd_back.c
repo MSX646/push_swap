@@ -12,7 +12,7 @@
 
 #include "../libft.h"
 
-void	ft_stack_add_to_end(t_stack **stack, t_stack *new)
+void	ft_stackadd_back(t_stack **stack, t_stack *new)
 {
 	t_stack	*last;
 

@@ -1,27 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_stack_min_value.c                               :+:      :+:    :+:   */
+/*   ft_stack_get.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kezekiel <kezekiel@student.21-schoo>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/09 16:32:06 by kezekiel          #+#    #+#             */
-/*   Updated: 2021/12/09 16:32:07 by kezekiel         ###   ########.fr       */
+/*   Created: 2021/12/09 16:33:12 by kezekiel          #+#    #+#             */
+/*   Updated: 2021/12/09 16:33:15 by kezekiel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
-int	ft_stack_min_value(t_stack *stack_a)
+int	ft_stack_getval(t_stack *stack, int pos)
 {
-	int	min_value;
+	int	i;
 
-	min_value = stack_a->data;
-	while (stack_a)
+	i = 0;
+	while (stack)
 	{
-		if (stack_a->data < min_value)
-			min_value = stack_a->data;
-		stack_a = stack_a->next;
+		if (i == pos)
+			return (stack->data);
+		stack = stack->next;
+		i++;
 	}
-	return (min_value);
+	return (MIN_INT);
 }

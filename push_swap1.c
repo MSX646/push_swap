@@ -16,7 +16,7 @@ void	push_min(t_stack **stack_a, t_stack **stack_b)
 {
 	int	min;
 
-	min = ft_stack_min_value(*stack_a);
+	min = ft_stack_min(*stack_a);
 	while ((*stack_a)->data != min)
 	{
 		if ((*stack_a)->data != min && (*stack_a)->next->data != min)
@@ -40,11 +40,11 @@ void	get_limit(t_stack **interval, t_stack *stack, int status)
 	{
 		min_idx = ft_stack_find(dupl, (*interval)->data);
 		max_idx = ft_stack_find(dupl, (*interval)->next->data);
-		new = ft_stack_get(dupl, ((max_idx - min_idx) / 2 + min_idx + 3));
+		new = ft_stack_getval(dupl, ((max_idx - min_idx) / 2 + min_idx + 3));
 	}
 	else
-		new = ft_stack_get(dupl, ft_stack_size(dupl) / 2);
-	ft_stack_add_begin(interval, ft_stack_new_node(new));
+		new = ft_stack_getval(dupl, ft_stack_size(dupl) / 2);
+	ft_stackadd_front(interval, ft_stack_new_node(new));
 	stack_sort(interval);
 	ft_stack_clear(&dupl);
 }
@@ -77,14 +77,14 @@ int	get_next(t_stack *stack_a, t_stack **interval)
 	dupl = ft_stack_duplicate(stack_a);
 	stack_sort(&dupl);
 	pos = ft_stack_find(dupl, (*interval)->next->data);
-	min = ft_stack_get(dupl, pos);
+	min = ft_stack_getval(dupl, pos);
 	if (min == ft_stack_last(dupl)->data)
 	{
 		ft_stack_clear(&dupl);
 		return (min);
 	}
 	else
-		min = ft_stack_get(dupl, pos + 1);
+		min = ft_stack_getval(dupl, pos + 1);
 	ft_stack_clear(&dupl);
 	return (min);
 }

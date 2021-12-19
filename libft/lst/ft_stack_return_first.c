@@ -12,7 +12,7 @@
 
 #include "../libft.h"
 
-t_stack	*ft_stack_return_first(t_stack *stack)
+t_stack	*ft_stack_first(t_stack *stack)
 {
 	if (!stack)
 		return (0);
