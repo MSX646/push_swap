@@ -20,12 +20,12 @@ void	swap(t_stack *constant, t_stack *support, char *msg)
 	ft_putstr_fd(msg, 1);
 }
 
-void	push(t_stack **from_stack, t_stack **to_stack, char *msg)
+void	push(t_stack **from, t_stack **to, char *msg)
 {
-	if (!(*from_stack))
+	if (!(*from))
 		return ;
-	ft_stack_add_begin(to_stack, ft_stack_new_node((*from_stack)->data));
-	ft_stack_remove(from_stack);
+	ft_stack_add_begin(to, ft_stack_new_node((*from)->data));
+	ft_stack_remove(from);
 	ft_putstr_fd(msg, 1);
 }
 
@@ -45,9 +45,7 @@ void	rotate(t_stack **constant, t_stack **support, char *msg)
 	ft_putstr_fd(msg, 1);
 }
 
-void	rrotate(t_stack **constant,
-			t_stack **support,
-			char *msg)
+void	rrotate(t_stack **constant, t_stack **support, char *msg)
 {
 	int		data;
 	t_stack	*last_node;

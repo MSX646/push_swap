@@ -28,15 +28,16 @@
 # endif
 
 void	swap(t_stack *constant, t_stack *support, char *msg);
-void	push(t_stack **from_stack, t_stack **to_stack, char *msg);
-void	rotate(t_stack **mandatory, t_stack **optional, char *msg);
-void	rrotate(t_stack **mandatory, t_stack **optional, char *msg);
+void	push(t_stack **from, t_stack **to, char *msg);
+void	rotate(t_stack **constant, t_stack **support, char *msg);
+void	rrotate(t_stack **constant, t_stack **support, char *msg);
 
 void	clean_exit(t_stack *stack_a, t_stack *stack_b, int status);
 void	sorting(t_stack **stack_a, t_stack **stack_b);
 void	sort3(t_stack **stack_a);
 void	sort5(t_stack **stack_a, t_stack **stack_b);
 void	sort_big(t_stack **stack_a, t_stack **stack_b, t_stack **limits, int i);
+
 void	push_min(t_stack **stack_a, t_stack **stack_b);
 void	get_limit(t_stack **interval, t_stack *stack, int status);
 int		get_first(t_stack *stack_a, t_stack *interval);
