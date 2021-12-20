@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: kezekiel <kezekiel@student.21-schoo>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/09 16:31:26 by kezekiel          #+#    #+#             */
-/*   Updated: 2021/12/09 16:31:29 by kezekiel         ###   ########.fr       */
+/*   Created: 2021/12/20 13:30:17 by kezekiel          #+#    #+#             */
+/*   Updated: 2021/12/20 13:30:32 by kezekiel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_stack_size(t_stack *stack)
 {
-	int	size;
+	size_t	size;
 
 	size = 0;
 	while (stack)

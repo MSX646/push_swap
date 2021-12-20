@@ -1,27 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_stack_min.c                                     :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kezekiel <kezekiel@student.21-schoo>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/20 13:29:27 by kezekiel          #+#    #+#             */
-/*   Updated: 2021/12/20 13:29:28 by kezekiel         ###   ########.fr       */
+/*   Created: 2021/12/20 13:26:36 by kezekiel          #+#    #+#             */
+/*   Updated: 2021/12/20 13:26:38 by kezekiel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "libft.h"
 
-int	ft_stack_min(t_stack *stack_a)
+void	ft_putstr_fd(char *s, int fd)
 {
-	int	min;
-
-	min = stack_a->data;
-	while (stack_a)
-	{
-		if (stack_a->data < min)
-			min = stack_a->data;
-		stack_a = stack_a->next;
-	}
-	return (min);
+	if (!s)
+		return ;
+	write (fd, s, ft_strlen(s));
 }

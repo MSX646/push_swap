@@ -1,3 +1,15 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: kezekiel <kezekiel@student.21-schoo>       +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2021/12/20 13:25:47 by kezekiel          #+#    #+#              #
+#    Updated: 2021/12/20 13:25:54 by kezekiel         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 NAME = push_swap 
  
 CC = gcc 
@@ -12,10 +24,10 @@ SRC	   = main.c oper.c push_swap1.c push_swap2.c sorting.c
 
 OBJS = ${SRC:.c=.o} 
  
-all:   $(NAME)  
+all:   $(NAME) 
  
 $(NAME): $(OBJS)  
-	make -C libft/ 
+	make -C libft/
 	$(CC) $(CFLAGS) -o $(NAME) $(OBJS) $(LIBFT) 
  
 %.o:%.c $(HEADER) 

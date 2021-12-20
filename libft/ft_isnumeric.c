@@ -1,27 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_stack_min.c                                     :+:      :+:    :+:   */
+/*   ft_str_isnumeric.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kezekiel <kezekiel@student.21-schoo>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/20 13:29:27 by kezekiel          #+#    #+#             */
-/*   Updated: 2021/12/20 13:29:28 by kezekiel         ###   ########.fr       */
+/*   Created: 2021/12/20 13:26:41 by kezekiel          #+#    #+#             */
+/*   Updated: 2021/12/20 13:26:42 by kezekiel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "libft.h"
 
-int	ft_stack_min(t_stack *stack_a)
+int	ft_str_isnumeric(char *str)
 {
-	int	min;
+	int	i;
 
-	min = stack_a->data;
-	while (stack_a)
+	i = 0;
+	if (str[i] == '-')
+		i++;
+	while (str[i])
 	{
-		if (stack_a->data < min)
-			min = stack_a->data;
-		stack_a = stack_a->next;
+		if (!ft_isdigit(str[i]))
+			return (0);
+		i++;
 	}
-	return (min);
+	return (1);
 }

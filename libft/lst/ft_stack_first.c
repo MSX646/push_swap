@@ -1,27 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_stack_min.c                                     :+:      :+:    :+:   */
+/*   ft_stack_return_first.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kezekiel <kezekiel@student.21-schoo>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/20 13:29:27 by kezekiel          #+#    #+#             */
-/*   Updated: 2021/12/20 13:29:28 by kezekiel         ###   ########.fr       */
+/*   Created: 2021/12/20 13:29:48 by kezekiel          #+#    #+#             */
+/*   Updated: 2021/12/20 13:29:51 by kezekiel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
-int	ft_stack_min(t_stack *stack_a)
+t_stack	*ft_stack_first(t_stack *stack)
 {
-	int	min;
-
-	min = stack_a->data;
-	while (stack_a)
-	{
-		if (stack_a->data < min)
-			min = stack_a->data;
-		stack_a = stack_a->next;
-	}
-	return (min);
+	if (!stack)
+		return (0);
+	return (stack);
 }

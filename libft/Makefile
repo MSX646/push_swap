@@ -2,8 +2,8 @@ NAME		=	libft.a
 
 LIBFT_DIR	=	./
 
-SRC			=	ft_atoi.c ft_isdigit.c ft_isspace.c ft_putchar_fd.c \
-				ft_putstr_fd.c ft_str_isnumeric.c ft_swap.c ft_strlen.c \
+SRC			=	ft_atoi.c ft_isdigit.c ft_isspace.c \
+				ft_putstr.c ft_isnumeric.c ft_swap.c ft_strlen.c \
 				$(STACK)
 				
 OBJ			=	$(SRC:.c=.o)
@@ -13,7 +13,7 @@ HEADER		=   libft.h lst/lst.h
 STACK_DIR	=	./lst
 STACK		=	lst/ft_stack_new_node.c lst/ft_stackadd_front.c \
 				lst/ft_stackadd_back.c lst/ft_stack_size.c \
-				lst/ft_stack_last.c lst/ft_stack_return_first.c \
+				lst/ft_stack_last.c lst/ft_stack_first.c \
 				lst/ft_stack_remove.c lst/ft_stack_has_bigger.c \
 				lst/ft_stack_clear.c lst/ft_stack_issorted.c \
 				lst/ft_stack_max.c lst/ft_stack_min.c \
@@ -29,7 +29,7 @@ CFLAG		=	-Wall -Wextra -Werror
 CLIB		=	ar -rc
 RM			=	rm -f
 
-all: $(NAME)
+libft: $(NAME)
 
 %.o: %.c $(HEADER)
 	$(CC) $(CFLAG) -c $< -o $(<:.c=.o) $(INC)
